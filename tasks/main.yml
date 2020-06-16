@@ -1,0 +1,23 @@
+---
+- name: check mandatory variables
+  fail:
+    msg: 'variable {{ mandatory_var.key }} is not defined'
+  when: not mandatory_var.value
+  loop: "{{ mandatory_vars | dict2items }}"
+  loop_control:
+    loop_var: mandatory_var
+
+- name: add autostart shortcut
+  win_shortcut:
+    description: "{{ app_name }}"
+    dest: "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ app_name }}.lnk"
+    src: "{{ executable_path }}"
+    arguments: "{{ executable_arguments }}"
+  notify:
+    - reboot
+
+- name: create shortcut to Startup directory for {{ autostart_user }}
+  win_shortcut:
+    description: startup
+    src: "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+    dest: "{{ autostart_user_dir }}\\Desktop\\Startup.lnk"

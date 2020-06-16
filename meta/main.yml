@@ -1,0 +1,14 @@
+galaxy_info:
+  author: ac
+  description: create an autostart link for a command on a Windows machine
+  license: license (MIT)
+
+  min_ansible_version: 2.9
+  platforms:
+    - name: Windows
+      versions:
+        - "10"
+
+  galaxy_tags: []
+
+dependencies: []
