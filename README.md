@@ -18,4 +18,4 @@ executable_path: "string"
 autostart_user: "string"
 ```
 
-The role will create an autostart link for `executable_path executable_arguments` for the `autostart_user` and a link from the `Startup` dierectory to the `autostart_user` Desktop.
+The role will create an autostart link for `executable_path executable_arguments` for the `autostart_user` and a link from the `Startup` directory to the `autostart_user` Desktop.
