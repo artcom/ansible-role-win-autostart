@@ -1,5 +1,5 @@
 # Win Autostart
-Ansible role to create an autostart link for a command.
+Ansible role to create an autostart link for a command on a Windows 10 machine.
 
 ## Role Variables
 Available variables are listed below, along with default values `(see defaults/main.yml)`:
@@ -17,3 +17,5 @@ app_name: "string"
 executable_path: "string"
 autostart_user: "string"
 ```
+
+The role will create an autostart link for `executable_path executable_arguments` for the `autostart_user` and a link from the `Startup` dierectory to the `autostart_user` Desktop.
