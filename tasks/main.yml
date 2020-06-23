@@ -13,6 +13,7 @@
     dest: "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ app_name }}.lnk"
     src: "{{ executable_path }}"
     arguments: "{{ executable_arguments }}"
+    directory: "{{ working_directory }}"
   notify:
     - reboot
 

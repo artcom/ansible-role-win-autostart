@@ -9,6 +9,7 @@ executable_path: null
 autostart_user: null
 autostart_user_dir: "C:\\Users\\{{ autostart_user }}"
 executable_arguments: ""
+working_directory: ""
 ```
 
 Mandatory variables (role will fail if the variables are not set):
