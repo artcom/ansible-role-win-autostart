@@ -15,7 +15,7 @@ executable_arguments: ""
 working_directory: ""
 ```
 
-Mandatory variables (role will fail if the variables are not set):
+Required variables (role will fail if the variables are not set):
 ```yaml
 app_name: "string"
 executable_path: "string"
@@ -23,6 +23,9 @@ autostart_user: "string"
 ```
 
 The role will create an autostart link for `executable_path executable_arguments` for the `autostart_user` and a link from the `Startup` directory to the `autostart_user` Desktop.
+
+## Dependencies
+* [check-required-variables](https://github.com/artcom/ansible-role-check-required-variables)
 
 # Example Playbook
 ```yaml
@@ -40,3 +43,6 @@ The role will create an autostart link for `executable_path executable_arguments
         executable_path: "path_to_my_exe"
         autostart_user: "{{ ansible_user }}"
 ```
+
+## License
+MIT
