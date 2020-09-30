@@ -1,12 +1,4 @@
 ---
-- name: check mandatory variables
-  fail:
-    msg: 'variable {{ mandatory_var.key }} is not defined'
-  when: not mandatory_var.value
-  loop: "{{ mandatory_vars | dict2items }}"
-  loop_control:
-    loop_var: mandatory_var
-
 - name: add autostart shortcut
   win_shortcut:
     description: "{{ app_name }}"
