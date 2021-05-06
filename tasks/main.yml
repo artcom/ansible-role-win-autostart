@@ -1,6 +1,6 @@
 ---
 - name: add autostart shortcut
-  win_shortcut:
+  community.windows.win_shortcut:
     description: "{{ app_name }}"
     dest: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ app_name }}.lnk"
     src: "{{ executable_path }}"
@@ -10,7 +10,7 @@
     - reboot
 
 - name: create shortcut to Startup directory for {{ autostart_user }}
-  win_shortcut:
+  community.windows.win_shortcut:
     description: startup
     src: "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
     dest: "{{ autostart_user_dir }}\\Desktop\\Startup.lnk"
