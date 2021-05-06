@@ -1,8 +1,8 @@
 ---
 - name: add autostart shortcut
   community.windows.win_shortcut:
-    description: "{{ app_name }}"
-    dest: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ app_name }}.lnk"
+    description: "{{ description }}"
+    dest: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ description }}.lnk"
     src: "{{ executable_path }}"
     arguments: "{{ executable_arguments }}"
     directory: "{{ working_directory }}"

@@ -7,7 +7,7 @@ This role requires a reboot handler.
 ## Role Variables
 Available variables are listed below, along with default values `(see defaults/main.yml)`:
 ```yaml
-app_name: null
+description: null
 executable_path: null
 autostart_user: null
 autostart_user_dir: "C:\\Users\\{{ autostart_user }}"
@@ -17,7 +17,7 @@ working_directory: ""
 
 Required variables (role will fail if the variables are not set):
 ```yaml
-app_name: "string"
+description: "string"
 executable_path: "string"
 autostart_user: "string"
 ```

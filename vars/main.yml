@@ -1,4 +1,4 @@
 required_vars:
-  app_name: "{{ app_name }}"
+  description: "{{ description }}"
   executable_path: "{{ executable_path }}"
   autostart_user: "{{ autostart_user }}"
