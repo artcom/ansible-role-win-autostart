@@ -3,11 +3,12 @@ galaxy_info:
   description: create an autostart link for a command on a Windows machine
   license: license (MIT)
 
-  min_ansible_version: 3.0
+  min_ansible_version: "9.3"
   platforms:
     - name: Windows
       versions:
         - "10"
+        - "11"
 
   galaxy_tags: []
 

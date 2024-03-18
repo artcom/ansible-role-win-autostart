@@ -1,16 +1,17 @@
 ---
 - name: add autostart shortcut
   community.windows.win_shortcut:
-    description: "{{ description }}"
-    dest: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ description }}.lnk"
-    src: "{{ executable_path }}"
-    arguments: "{{ executable_arguments }}"
-    directory: "{{ working_directory }}"
+    description: "{{ autostart_description }}"
+    src: "{{ autostart_executable_path }}"
+    arguments: "{{ autostart_executable_arguments }}"
+    directory: "{{ autostart_executable_working_directory }}"
+    dest: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{{ autostart_app_name }}.lnk"
   notify:
     - reboot
 
 - name: create shortcut to Startup directory for {{ autostart_user }}
   community.windows.win_shortcut:
-    description: startup
-    src: "{{ autostart_user_dir }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
-    dest: "{{ autostart_user_dir }}\\Desktop\\Startup.lnk"
+    description: "{{ autostart_description }}"
+    src: "{{ autostart_executable_path }}"
+    arguments: "{{ autostart_executable_arguments }}"
+    dest: "{{ autostart_user_dir }}\\Desktop\\Start {{ autostart_app_name }}.lnk"

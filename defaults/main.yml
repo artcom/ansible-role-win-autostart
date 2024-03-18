@@ -1,6 +1,7 @@
-app_name: null
-executable_path: null
+autostart_app_name: null
+autostart_executable_path: null
 autostart_user: null
+autostart_description: "{{ autostart_app_name }}"
 autostart_user_dir: "C:\\Users\\{{ autostart_user }}"
-executable_arguments: ""
-working_directory: ""
+autostart_executable_arguments: ""
+autostart_executable_working_directory: ""
